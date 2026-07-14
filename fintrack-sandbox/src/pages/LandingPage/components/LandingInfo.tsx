@@ -28,9 +28,9 @@ export function LandingInfo() {
                 </a>
 
                 <div className={styles.landing__description}>
-          <span className={styles.landing__label}>
-            Трекер особистих фінансів
-          </span>
+                    <span className={styles.landing__label}>
+                        Трекер особистих фінансів
+                    </span>
 
                     <h1>Контролюй гроші без складних таблиць</h1>
 
