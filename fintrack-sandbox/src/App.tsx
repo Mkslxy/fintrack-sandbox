@@ -1,5 +1,7 @@
+import { LandingPage } from "./pages/LandingPage/LandingPage";
+
 function App() {
-  return <h1>FinTrack</h1>;
+  return <LandingPage />;
 }
 
 export default App;
