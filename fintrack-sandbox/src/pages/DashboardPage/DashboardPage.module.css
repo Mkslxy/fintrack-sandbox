@@ -1,0 +1,557 @@
+.dashboard {
+    min-height: 100vh;
+    padding: 32px;
+    background: #f4f7fb;
+}
+
+.topbar {
+    max-width: 1400px;
+    margin: 0 auto 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.topbar h1 {
+    margin: 6px 0 0;
+    color: #172033;
+    font-size: clamp(28px, 4vw, 42px);
+}
+
+.brand {
+    color: #168c6c;
+    font-weight: 800;
+}
+
+.backLink {
+    padding: 11px 18px;
+    border: 1px solid #dce2e9;
+    border-radius: 10px;
+    color: #313b4e;
+    background: #ffffff;
+    text-decoration: none;
+}
+
+.summaryGrid {
+    max-width: 1400px;
+    margin: 0 auto 24px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.summaryCard {
+    padding: 22px;
+    border: 1px solid #e2e7ee;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 12px 36px rgba(24, 35, 55, 0.05);
+}
+
+.summaryLabel {
+    display: block;
+    margin-bottom: 12px;
+    color: #718096;
+    font-size: 14px;
+}
+
+.summaryValue {
+    color: #172033;
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+.contentGrid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:
+    minmax(320px, 0.7fr)
+    minmax(0, 1.3fr);
+    align-items: start;
+    gap: 20px;
+}
+
+.panel {
+    padding: 24px;
+    border: 1px solid #e2e7ee;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 12px 36px rgba(24, 35, 55, 0.05);
+    container-type: inline-size;
+}
+
+.panelHeader {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.panelHeader span {
+    color: #168c6c;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.panelHeader h2 {
+    margin: 6px 0 0;
+    color: #172033;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.field,
+.filterField {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field > span,
+.filterField > span {
+    color: #313b4e;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.field :is(input, select, textarea),
+.filterField :is(input, select) {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 13px;
+    border: 1px solid #dce2e9;
+    border-radius: 10px;
+    color: #172033;
+    background: #ffffff;
+    font: inherit;
+    outline: none;
+}
+
+.field textarea {
+    resize: vertical;
+}
+
+.field :is(input, select, textarea):focus,
+.filterField :is(input, select):focus {
+    border-color: #168c6c;
+    box-shadow: 0 0 0 4px rgba(22, 140, 108, 0.12);
+}
+
+.field :is(input, select, textarea)[aria-invalid="true"] {
+    border-color: #c04438;
+}
+
+.errorText {
+    color: #bc3428;
+    font-size: 13px;
+}
+
+.formActions {
+    display: flex;
+    gap: 12px;
+}
+
+.formActions :where(button) {
+    min-height: 46px;
+    padding: 0 18px;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.primaryButton {
+    min-height: 46px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 10px;
+    color: #ffffff;
+    background: #168c6c;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.secondaryButton {
+    border: 1px solid #dce2e9;
+    color: #313b4e;
+    background: #ffffff;
+}
+
+.primaryButton:disabled,
+.secondaryButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.filters {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr auto;
+    align-items: end;
+    gap: 12px;
+}
+
+.resetButton {
+    min-height: 46px;
+    padding: 0 16px;
+    border: 1px solid #dce2e9;
+    border-radius: 10px;
+    color: #313b4e;
+    background: #ffffff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.transactionList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.transactionItem {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 18px;
+    border: 1px solid #e4e9ef;
+    border-radius: 14px;
+}
+
+.transactionInfo {
+    min-width: 0;
+}
+
+.transactionInfo strong {
+    display: block;
+    color: #172033;
+}
+
+.transactionInfo p {
+    margin: 8px 0 0;
+    color: #718096;
+    font-size: 14px;
+}
+
+.meta {
+    display: block;
+    margin-top: 5px;
+    color: #8b96a5;
+    font-size: 13px;
+}
+
+.amount {
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+.income {
+    color: #168c6c;
+}
+
+.expense {
+    color: #c04438;
+}
+
+.itemActions {
+    display: flex;
+    gap: 8px;
+}
+
+.itemActions button {
+    min-height: 38px;
+    padding: 0 12px;
+    border-radius: 8px;
+    background: #ffffff;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.editButton {
+    border: 1px solid #dce2e9;
+    color: #313b4e;
+}
+
+.deleteButton {
+    border: 1px solid #efc9c5;
+    color: #b63429;
+}
+
+.itemActions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.emptyState,
+.loadingState {
+    padding: 60px 24px;
+    text-align: center;
+}
+
+.emptyState h3,
+.loadingState h1 {
+    margin: 0 0 10px;
+    color: #172033;
+}
+
+.emptyState p,
+.loadingState p {
+    color: #718096;
+}
+
+.loadingState {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f4f7fb;
+}
+
+.loader {
+    width: 42px;
+    height: 42px;
+    border: 4px solid #dce8e4;
+    border-top-color: #168c6c;
+    border-radius: 50%;
+    animation: rotate 700ms linear infinite;
+}
+
+.errorBox {
+    max-width: 1400px;
+    margin: 0 auto 20px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    border: 1px solid #efc9c5;
+    border-radius: 12px;
+    color: #a93226;
+    background: #fdf0ef;
+}
+
+.errorBox button {
+    border: 0;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@container (max-width: 520px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .fullWidth {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 1100px) {
+    .summaryGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .dashboard {
+        padding: 20px 14px;
+    }
+
+    .summaryGrid,
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .transactionItem {
+        grid-template-columns: 1fr;
+    }
+
+    .itemActions {
+        width: 100%;
+    }
+
+    .itemActions button {
+        flex: 1;
+    }
+}
+
+.dialogOverlay {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    background: rgba(13, 23, 38, 0.65);
+    backdrop-filter: blur(3px);
+    animation: dialogOverlayShow 160ms ease-out;
+}
+
+.dialogContent {
+    position: fixed;
+    z-index: 101;
+    top: 50%;
+    left: 50%;
+    width: min(calc(100vw - 32px), 460px);
+    padding: 28px;
+    border: 1px solid #e2e7ee;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 28px 90px rgba(13, 23, 38, 0.25);
+    transform: translate(-50%, -50%);
+    animation: dialogContentShow 180ms ease-out;
+}
+
+.dialogContent:focus {
+    outline: none;
+}
+
+.dialogTitle {
+    margin: 0;
+    color: #172033;
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+}
+
+.dialogDescription {
+    margin: 14px 0 0;
+    color: #718096;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.dialogDescription strong {
+    color: #313b4e;
+}
+
+.dialogError {
+    margin: 18px 0 0;
+    padding: 12px 14px;
+    border: 1px solid #efc9c5;
+    border-radius: 10px;
+    color: #a93226;
+    background: #fdf0ef;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.dialogActions {
+    margin-top: 26px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.dialogCancelButton,
+.dialogDeleteButton {
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.dialogCancelButton {
+    border: 1px solid #dce2e9;
+    color: #313b4e;
+    background: #ffffff;
+}
+
+.dialogDeleteButton {
+    border: 1px solid #b63429;
+    color: #ffffff;
+    background: #b63429;
+}
+
+.dialogCancelButton:hover {
+    background: #f4f7fb;
+}
+
+.dialogDeleteButton:hover {
+    background: #992c24;
+}
+
+.dialogCancelButton:focus-visible,
+.dialogDeleteButton:focus-visible {
+    outline: 3px solid rgba(22, 140, 108, 0.2);
+    outline-offset: 2px;
+}
+
+.dialogCancelButton:disabled,
+.dialogDeleteButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+@keyframes dialogOverlayShow {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes dialogContentShow {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -48%) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .dialogContent {
+        padding: 22px;
+    }
+
+    .dialogActions {
+        flex-direction: column-reverse;
+    }
+
+    .dialogCancelButton,
+    .dialogDeleteButton {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dialogOverlay,
+    .dialogContent {
+        animation: none;
+    }
+}
