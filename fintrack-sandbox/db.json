@@ -1,0 +1,41 @@
+{
+  "transactions": [
+    {
+      "id": "2",
+      "title": "Продукти",
+      "amount": 123,
+      "type": "expense",
+      "category": "Продукти",
+      "date": "2026-07-13",
+      "description": "Тест тестовий"
+    },
+    {
+      "id": "3",
+      "title": "Інтернет",
+      "amount": 350,
+      "type": "expense",
+      "category": "Підписки",
+      "date": "2026-07-12",
+      "description": "Щомісячна оплата"
+    },
+    {
+      "id": "4",
+      "title": "Фриланс-проєкт",
+      "amount": 8500,
+      "type": "income",
+      "category": "Фриланс",
+      "date": "2026-07-10",
+      "description": "Розробка landing page"
+    },
+    {
+      "title": "Приклад",
+      "amount": 1000000,
+      "type": "income",
+      "category": "Зарплата",
+      "date": "2025-07-15",
+      "description": "",
+      "id": "Qj54fBsuxOg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
