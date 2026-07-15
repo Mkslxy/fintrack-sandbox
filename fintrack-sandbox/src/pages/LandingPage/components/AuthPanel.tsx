@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import styles from "../LandingPage.module.css";
 import {type AuthMode, type AuthValues, createAuthSchema} from "../schemas/authSchema.ts";
 import {submitAuthForm} from "../services/AuthSevices.tsx";
+import {useNavigate} from "react-router-dom";
 
 const defaultValues: AuthValues = {
     name: "",
@@ -16,6 +17,8 @@ const defaultValues: AuthValues = {
 export function AuthPanel() {
     const [authMode, setAuthMode] = useState<AuthMode>("login");
     const [successMessage, setSuccessMessage] = useState("");
+
+    const navigate = useNavigate();
 
     const isLogin = authMode === "login";
 
@@ -54,6 +57,8 @@ export function AuthPanel() {
                     ? `Вхід виконано для ${result.email}`
                     : `Обліковий запис для ${result.displayName} створено`,
             );
+            navigate("/dashboard");
+
         } catch (error: unknown) {
             const message =
                 error instanceof Error
