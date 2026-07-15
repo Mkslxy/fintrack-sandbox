@@ -22,7 +22,7 @@ import { TransactionForm } from "./components/TransactionForm";
 import { TransactionList } from "./components/TransactionList";
 
 import styles from "./DashboardPage.module.css"
-import {useTransactions} from "../../hooks/transaction/ useTransaction.ts";
+import {useTransactions} from "../../hooks/transaction/useTransaction.ts";
 import {DeleteTransactionDialog} from "./components/dialog/DeleteTransaction.tsx";
 
 export function DashboardPage() {
