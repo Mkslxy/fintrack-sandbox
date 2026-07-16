@@ -19,6 +19,12 @@
     font-size: clamp(28px, 4vw, 42px);
 }
 
+.topbar__right {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .brand {
     color: var(--color-primary);
     font-weight: 800;
@@ -387,6 +393,15 @@
         padding: 20px 14px;
     }
 
+    .topbar__right {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topbar__right > button {
+        width: 100%;
+    }
+
     .summaryGrid,
     .filters {
         grid-template-columns: 1fr;
@@ -435,7 +450,7 @@
 
 .dialogTitle {
     margin: 0;
-    color: #172033;
+    color: var(--color-text-primary);
     font-size: 24px;
     line-height: 1.25;
     letter-spacing: -0.03em;
