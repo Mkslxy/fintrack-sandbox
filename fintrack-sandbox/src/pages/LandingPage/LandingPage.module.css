@@ -34,6 +34,12 @@
     flex-direction: column;
 }
 
+.landing__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .landing__logo {
     width: fit-content;
     color: var(--color-text-on-primary);
@@ -69,7 +75,7 @@
 .landing__description p {
     max-width: 590px;
     margin: 28px 0 0;
-    color: var(--color-text-hero-muted);
+    color: var(--landing-info-muted);
     font-size: 18px;
     line-height: 1.7;
 }
@@ -343,4 +349,70 @@
 .auth-switcher__button:disabled {
     cursor: not-allowed;
     opacity: 0.65;
+}
+
+.landing__info {
+    --landing-info-bg: var(--gradient-landing-info);
+    --landing-info-text: #ffffff;
+    --landing-info-muted: #aeb9c8;
+    --landing-info-subtle: #97a5b7;
+    --landing-info-accent: #65dfbd;
+    --landing-info-card-bg: rgba(255, 255, 255, 0.04);
+    --landing-info-card-border: rgba(255, 255, 255, 0.09);
+    --landing-info-decoration-border: rgba(255, 255, 255, 0.08);
+    --landing-toggle-bg: rgba(255, 255, 255, 0.08);
+    --landing-toggle-hover-bg: rgba(255, 255, 255, 0.14);
+    --landing-toggle-border: rgba(255, 255, 255, 0.16);
+    --landing-toggle-color: #ffffff;
+
+    color: var(--landing-info-text);
+    background: var(--landing-info-bg);
+}
+
+:global([data-theme="dark"]) .landing__info {
+    --landing-info-bg:
+            radial-gradient(circle at 15% 15%, rgba(45, 187, 145, 0.16), transparent 32%),
+            radial-gradient(circle at 90% 80%, rgba(57, 119, 255, 0.12), transparent 34%),
+            #f4f7fb;
+    --landing-info-text: #172033;
+    --landing-info-muted: #4b586d;
+    --landing-info-subtle: #64748b;
+    --landing-info-accent: #168c6c;
+    --landing-info-card-bg: rgba(255, 255, 255, 0.72);
+    --landing-info-card-border: rgba(23, 32, 51, 0.1);
+    --landing-info-decoration-border: rgba(23, 32, 51, 0.08);
+    --landing-toggle-bg: #ffffff;
+    --landing-toggle-hover-bg: #f1f4f8;
+    --landing-toggle-border: rgba(23, 32, 51, 0.14);
+    --landing-toggle-color: #172033;
+}
+
+.landing__container {
+    align-items: center;
+    gap: 24px;
+}
+
+.landing__logo,
+.landing__description h1 {
+    color: var(--landing-info-text);
+}
+
+.landing__label,
+.feature-card__number {
+    color: var(--landing-info-accent);
+}
+
+.feature-card {
+    border-color: var(--landing-info-card-border);
+    background: var(--landing-info-card-bg);
+}
+
+.landing__info::after {
+    border-color: var(--landing-info-decoration-border);
+}
+
+.landing__container .landing__themeToggle {
+    color: var(--landing-toggle-color);
+    border-color: var(--landing-toggle-border);
+    background: var(--landing-toggle-bg);
 }

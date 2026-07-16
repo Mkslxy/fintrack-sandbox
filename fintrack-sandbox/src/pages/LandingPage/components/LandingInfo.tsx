@@ -1,5 +1,6 @@
 import { FeatureCard } from "./FeatureCard";
 import styles from "../LandingPage.module.css";
+import {ThemeToggle} from "../../../components/theme-toggle/ThemeToggle.tsx";
 
 const features = [
     {
@@ -23,9 +24,12 @@ export function LandingInfo() {
     return (
         <section className={styles.landing__info}>
             <div className={styles.landing__content}>
-                <a className={styles.landing__logo} href="/">
-                    FinTrack
-                </a>
+               <div className={styles.landing__container}>
+                   <a className={styles.landing__logo} href="/">
+                       FinTrack
+                   </a>
+                   <ThemeToggle className={styles.landing__themeToggle} />
+               </div>
 
                 <div className={styles.landing__description}>
                     <span className={styles.landing__label}>

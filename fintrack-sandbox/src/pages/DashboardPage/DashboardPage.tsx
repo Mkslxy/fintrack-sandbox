@@ -24,6 +24,7 @@ import { TransactionList } from "./components/TransactionList";
 import styles from "./DashboardPage.module.css"
 import {useTransactions} from "../../hooks/transaction/useTransaction.ts";
 import {DeleteTransactionDialog} from "./components/dialog/DeleteTransaction.tsx";
+import { ThemeToggle } from "../../components/theme-toggle/ThemeToggle";
 
 export function DashboardPage() {
     const {
@@ -145,10 +146,12 @@ export function DashboardPage() {
                     <span className={styles.brand}>FinTrack</span>
                     <h1>Фінансовий кабінет</h1>
                 </div>
-
-                <Link className={styles.backLink} to="/">
-                    Вийти
-                </Link>
+                <div className={styles.topbar__right}>
+                    <Link className={styles.backLink} to="/">
+                        Вийти
+                    </Link>
+                    <ThemeToggle />
+                </div>
             </header>
 
             <section className={styles.summaryGrid}>
